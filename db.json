@@ -1,0 +1,67 @@
+{
+  "products": [
+    {
+      "id": "wireless-headphones",
+      "name": "Premium Wireless Headphones",
+      "description": "Experience crystal-clear audio with our premium wireless headphones. Features active noise cancellation, 30-hour battery life, and comfortable over-ear design.",
+      "price": 299.99,
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400",
+      "category": "Electronics",
+      "stock": 45
+    },
+    {
+      "id": "smart-watch-pro",
+      "name": "Smart Watch Pro",
+      "description": "Stay connected with our feature-packed smartwatch. Heart rate monitoring, GPS tracking, water resistance, and 7-day battery life.",
+      "price": 399.99,
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400",
+      "category": "Electronics",
+      "stock": 28
+    },
+    {
+      "id": "leather-backpack",
+      "name": "Vintage Leather Backpack",
+      "description": "Handcrafted genuine leather backpack with multiple compartments. Perfect for work or travel with laptop sleeve included.",
+      "price": 189.99,
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400",
+      "category": "Accessories",
+      "stock": 62
+    },
+    {
+      "id": "running-shoes",
+      "name": "Ultra Boost Running Shoes",
+      "description": "Engineered for performance with responsive cushioning and breathable mesh upper. Ideal for long-distance running.",
+      "price": 159.99,
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400",
+      "category": "Footwear",
+      "stock": 89
+    },
+    {
+      "id": "mechanical-keyboard",
+      "name": "RGB Mechanical Keyboard",
+      "description": "Tactile mechanical switches with per-key RGB lighting. Programmable macros and aircraft-grade aluminum frame.",
+      "price": 149.99,
+      "image": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=400",
+      "category": "Electronics",
+      "stock": 34
+    },
+    {
+      "id": "coffee-maker-deluxe",
+      "name": "Coffee Maker Deluxe",
+      "description": "Brew barista-quality coffee at home. Features built-in grinder, milk frother, and programmable settings.",
+      "price": 449.99,
+      "image": "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=400",
+      "category": "Home",
+      "stock": 17
+    }
+  ],
+  "orders": [],
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@fakeshop.com",
+      "password": "super_secret_123",
+      "role": "admin"
+    }
+  ]
+}
