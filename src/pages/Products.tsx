@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { SEOHead } from '../components/SEOHead';
-import { fetchProducts, type Product, ENV_SECRETS } from '../services/api';
+import { fetchProducts, type Product } from '../services/api';
 import { useCart } from '../context/CartContext';
 
 export function Products() {
@@ -29,25 +29,12 @@ export function Products() {
         description="Browse our complete collection of premium products."
       />
 
-      <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold">All Products</h1>
-        <span className="text-sm text-gray-500">
-          API: <code className="bg-gray-200 px-2 py-1 rounded">{ENV_SECRETS.API_URL}/products</code>
-        </span>
-      </div>
-
-      <div className="bg-amber-50 border-l-4 border-amber-400 p-4 text-gray-700">
-        <strong>SEO Problem:</strong> Search engines can't see this product list because it's fetched
-        via JavaScript after the page loads. The initial HTML is empty!
-      </div>
+      <h1 className="text-3xl font-bold">All Products</h1>
 
       {loading ? (
         <div className="text-center py-16">
           <div className="w-12 h-12 border-4 border-gray-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-gray-600">Fetching products from API...</p>
-          <p className="text-gray-400 text-sm mt-2">
-            This loading state is visible to users but NOT to search engines!
-          </p>
+          <p className="text-gray-600">Loading products...</p>
         </div>
       ) : error ? (
         <div className="bg-red-50 border border-red-200 text-red-700 p-6 rounded-lg">
@@ -91,23 +78,6 @@ export function Products() {
           ))}
         </div>
       )}
-
-      <section className="bg-amber-50 border-2 border-amber-400 rounded-xl p-6">
-        <h2 className="text-xl font-bold text-gray-900 mb-4">Problem: Client-Side Data Fetching</h2>
-        <div className="space-y-4 text-gray-700">
-          <p>Open the Network tab in DevTools. You'll see:</p>
-          <pre className="bg-gray-900 text-emerald-400 p-4 rounded-lg text-sm overflow-x-auto">
-{`1. GET /               → Empty HTML shell
-2. GET /assets/index.js → Large JavaScript bundle
-3. GET /products        → API call (happens AFTER JS loads)`}
-          </pre>
-          <p>This creates a "waterfall" - users wait for JS to load before seeing content.</p>
-          <p>
-            <strong>In Next.js:</strong> The API call happens on the server, and products are
-            included in the initial HTML response. One request, instant content!
-          </p>
-        </div>
-      </section>
     </div>
   );
 }

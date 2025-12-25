@@ -28,19 +28,13 @@ export function Layout() {
         </div>
       </header>
 
-      <div className="bg-amber-50 border-b border-amber-200 py-2 text-center text-sm text-gray-700">
-        This is a client-side React app demonstrating SPA limitations. View source to see empty HTML!
-      </div>
-
       <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-8">
         <Outlet />
       </main>
 
       <footer className="bg-gray-900 text-white py-8 text-center">
-        <p className="text-gray-300">FakeShop - A demo of client-side React limitations</p>
-        <p className="text-gray-500 text-sm mt-2">
-          Right-click → "View Page Source" to see the empty HTML that search engines receive
-        </p>
+        <p className="text-gray-300">FakeShop</p>
+        <p className="text-gray-500 text-sm mt-2">&copy; 2025 <a href="https://github.com/chetra-seng" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-300 transition-colors">Chetra Seng</a></p>
       </footer>
     </div>
   );

@@ -60,11 +60,6 @@ export function SEOHead({
       }
       tag.setAttribute('content', content);
     });
-
-    console.warn(`
-    ⚠️ SEO WARNING: These meta tags were set via JavaScript!
-    Search engines and social media crawlers may not see them.
-    `);
   }, [title, description, ogImage, ogType, canonicalUrl]);
 
   return null;

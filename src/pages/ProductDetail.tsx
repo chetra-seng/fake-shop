@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { SEOHead } from '../components/SEOHead';
-import { fetchProductById, fetchProducts, type Product, ENV_SECRETS } from '../services/api';
+import { fetchProductById, fetchProducts, type Product } from '../services/api';
 import { useCart } from '../context/CartContext';
 import { useState, useEffect } from 'react';
 
@@ -42,12 +42,6 @@ export function ProductDetail() {
       <div className="text-center py-16">
         <div className="w-12 h-12 border-4 border-gray-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4" />
         <p className="text-gray-600">Fetching product from API...</p>
-        <p className="text-gray-400 text-sm mt-2">
-          GET {ENV_SECRETS.API_URL}/products/{productId}
-        </p>
-        <p className="text-amber-600 text-sm mt-4">
-          In Next.js with SSR, this content would be instantly visible - no loading state!
-        </p>
       </div>
     );
   }
@@ -92,11 +86,6 @@ export function ProductDetail() {
         <span>{product.name}</span>
       </nav>
 
-      {/* API Info */}
-      <div className="text-sm text-gray-500">
-        Fetched from: <code className="bg-gray-200 px-2 py-1 rounded">{ENV_SECRETS.API_URL}/products/{product.id}</code>
-      </div>
-
       {/* Product Layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
@@ -134,28 +123,6 @@ export function ProductDetail() {
           </button>
         </div>
       </div>
-
-      {/* SEO Problem Demo */}
-      <section className="bg-amber-50 border-2 border-amber-400 rounded-xl p-6">
-        <h2 className="text-xl font-bold text-gray-900 mb-4">SEO Problem: Dynamic Product Pages</h2>
-        <div className="space-y-4 text-gray-700">
-          <p>This URL <code className="bg-gray-200 px-2 py-1 rounded">/products/{product.id}</code> should be indexed by Google.</p>
-          <p><strong>What search engines see (View Page Source):</strong></p>
-          <pre className="bg-gray-900 text-red-400 p-4 rounded-lg text-sm overflow-x-auto">
-{`<title>FakeShop</title>
-<meta name="description" content="">
-<div id="root"></div>  <!-- NO PRODUCT INFO! -->`}
-          </pre>
-          <p><strong>What they SHOULD see (with Next.js SSR):</strong></p>
-          <pre className="bg-gray-900 text-emerald-400 p-4 rounded-lg text-sm overflow-x-auto">
-{`<title>${product.name} - FakeShop</title>
-<meta name="description" content="${product.description.slice(0, 60)}...">
-<meta property="og:image" content="${product.image}">
-<h1>${product.name}</h1>
-<p class="price">$${product.price}</p>`}
-          </pre>
-        </div>
-      </section>
 
       {/* Related Products */}
       {relatedProducts.length > 0 && (
